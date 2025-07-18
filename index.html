@@ -1,0 +1,36 @@
+<!DOCTYPE html>  
+<html lang="zh-CN">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Urbansat Index Calculator</title>  
+    <link rel="stylesheet" href="style.css">  
+</head>  
+<body>  
+    <div class="container">  
+        <header>  
+            <img src="logo.png" alt="Urbansat Logo" class="logo">  
+            <h1>Urbansat measure</h1>  
+        </header>  
+        <main>  
+            <div class="input-group">  
+                <label for="longitude"> Longitude :</label>  
+                <input type="text" id="longitude" placeholder="例如: 116.4074">  
+            </div>  
+            <div class="input-group">  
+                <label for="latitude"> Latitude :</label>  
+                <input type="text" id="latitude" placeholder="例如: 39.9042">  
+            </div>  
+            <button id="calculate-btn">Calculate Urbansat</button>  
+            <div class="result-group">  
+                <label for="urbansat-index"> Urbansat :</label>  
+                <input type="text" id="urbansat-index" readonly>  
+            </div>  
+        </main>  
+        <footer>  
+            <p>Urbansat © 2023</p>  
+        </footer>  
+    </div>  
+    <script src="script.js"></script>  
+</body>  
+</html>
