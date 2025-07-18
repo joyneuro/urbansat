@@ -1,0 +1,62 @@
+<!DOCTYPE html>  
+<html lang="zh-CN">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Urbansat Index Calculator</title>  
+    <link rel="stylesheet" href="style.css">  
+    <!-- 引入SheetJS库用于处理Excel文件 -->  
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>  
+</head>  
+<body>  
+    <div class="container">  
+        <header>  
+            <img src="logo.png" alt="Urbansat Logo" class="logo">  
+            <h1>Urbansat 指数查询</h1>  
+        </header>  
+
+        <main class="main-content">  
+            <!-- 模式一：手动输入 -->  
+            <section class="input-mode">  
+                <h2>手动计算 （Manual input）</h2>  
+                
+                <!-- 新增的包裹容器 -->  
+                <div class="inline-inputs">  
+                    <div class="input-group">  
+                        <label for="longitude">经度 (Longitude)</label>  
+                        <input type="text" id="longitude" placeholder="例如: 116.4">  
+                    </div>  
+                    <div class="input-group">  
+                        <label for="latitude">纬度 (Latitude)</label>  
+                        <input type="text" id="latitude" placeholder="例如: 39.9">  
+                    </div>  
+                </div>  
+                
+                <div class="result-group">  
+                    <label for="urbansat-index">Urbansat 指数:</label>  
+                    <input type="text" id="urbansat-index" readonly>  
+                </div>  
+                <button id="calculate-btn">计算指数（Calculate）</button>  
+            </section>  
+
+            <div class="vertical-divider"></div>  
+
+            <!-- 模式二：文件导入 -->  
+            <section class="input-mode">  
+                <h2>批量处理（Batch Calculation）</h2>  
+                <div class="input-group full-height-group">  
+                    <label for="file-upload">上传 XLSX 文件:</label>  
+                    <input type="file" id="file-upload" accept=".xlsx">  
+                    <p id="file-info" class="file-info-text"></p>  
+                </div>  
+                <button id="process-file-btn">生成结果文件（Calculate）</button>  
+            </section>  
+        </main>  
+
+        <footer>  
+            <p>Urbansat © 2023</p>  
+        </footer>  
+    </div>  
+    <script src="script.js"></script>  
+</body>  
+</html>

@@ -1,0 +1,235 @@
+/* --- Google Fonts --- */  
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap');  
+
+/* --- 全局样式 --- */  
+body {  
+    font-family: 'Roboto', sans-serif;  
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);  
+    color: #333;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    min-height: 100vh;  
+    margin: 0;  
+    padding: 20px;  
+    box-sizing: border-box;  
+}  
+
+/* --- 主容器 --- */  
+.container {  
+    background-color: rgba(255, 255, 255, 0.95);  
+    padding: 30px 40px;  
+    border-radius: 20px;  
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);  
+    text-align: center;  
+    width: 100%;  
+    max-width: 950px; /* 增加了最大宽度 */  
+    backdrop-filter: blur(10px);  
+    border: 1px solid rgba(255, 255, 255, 0.3);  
+}  
+
+/* --- 头部和 Logo --- */  
+header {  
+    margin-bottom: 30px;  
+}  
+
+.logo {  
+    max-width: 110px;  
+    margin-bottom: 15px;  
+    border-radius: 50%;  
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  
+}  
+
+h1 {  
+    font-family: 'Poppins', sans-serif;  
+    color: #1a237e;  
+    font-size: 2.2em;  
+    margin: 0;  
+}  
+
+/* --- 主要内容区域 Flex 布局 --- */  
+.main-content {  
+    display: flex;  
+    justify-content: space-around;  
+    align-items: stretch; /* 关键：让子项高度相等 */  
+    gap: 30px;  
+}  
+
+/* --- 输入模式区域 --- */  
+.input-mode {  
+    flex: 1;  
+    min-width: 300px;  
+    display: flex;  
+    flex-direction: column; /* 确保内部元素垂直排列 */  
+    padding: 0 10px;  
+}  
+
+.input-mode h2 {  
+    font-family: 'Poppins', sans-serif;  
+    color: #3f51b5;  
+    font-size: 1.5em;  
+    margin-bottom: 25px;  
+    border-bottom: 2px solid #eee;  
+    padding-bottom: 10px;  
+}  
+
+/* --- 垂直分割线 --- */  
+.vertical-divider {  
+    width: 2px;  
+    background-color: #e0e0e0;  
+    border-radius: 1px;  
+}  
+
+/* --- 并排的输入框 --- */  
+.inline-inputs {  
+    display: flex;  
+    gap: 15px; /* 并排输入框之间的间距 */  
+    margin-bottom: 20px;  
+}  
+
+.inline-inputs .input-group {  
+    flex: 1; /* 让两个输入框平分空间 */  
+    margin-bottom: 0;  
+}  
+
+/* --- 表单元素 --- */  
+.input-group, .result-group {  
+    text-align: left;  
+    margin-bottom: 20px;  
+}  
+
+.full-height-group {  
+    flex-grow: 1; /* 让此元素填充剩余空间 */  
+    display: flex;  
+    flex-direction: column;  
+}  
+
+label {  
+    display: block;  
+    margin-bottom: 8px;  
+    font-weight: bold;  
+    color: #555;  
+    font-size: 0.95em;  
+}  
+
+input[type="text"] {  
+    width: 100%;  
+    padding: 12px 15px;  
+    border: 2px solid #ddd;  
+    border-radius: 8px;  
+    box-sizing: border-box;  
+    font-size: 1em;  
+    transition: border-color 0.3s, box-shadow 0.3s;  
+}  
+
+input[type="text"]:focus {  
+    border-color: #3f51b5;  
+    box-shadow: 0 0 8px rgba(63, 81, 181, 0.2);  
+    outline: none;  
+}  
+
+input::placeholder {  
+    color: #aaa;  
+}  
+
+input[readonly] {  
+    background-color: #f0f2f5;  
+    cursor: text;  
+    font-weight: bold;  
+    color: #3f51b5;  
+}  
+
+/* --- 文件上传按钮样式 --- */  
+input[type="file"] {  
+    width: 100%;  
+    padding: 10px;  
+    border: 2px dashed #ddd;  
+    border-radius: 8px;  
+    background-color: #f9f9f9;  
+    cursor: pointer;  
+    transition: border-color 0.3s, background-color 0.3s;  
+    font-size: 0.9em;  
+    flex-grow: 1;  
+    display: flex;  
+    align-items: center;  
+    justify-content: center;  
+    text-align: center;  
+}  
+
+input[type="file"]:hover {  
+    border-color: #3f51b5;  
+    background-color: #f0f2f5;  
+}  
+
+.file-info-text {  
+    margin-top: 15px;  
+    color: #555;  
+    font-size: 0.9em;  
+    word-break: break-all;  
+}  
+
+/* --- 按钮样式 --- */  
+button {  
+    width: 100%;  
+    padding: 15px;  
+    background: linear-gradient(45deg, #3f51b5 0%, #5c6bc0 100%);  
+    color: white;  
+    border: none;  
+    border-radius: 8px;  
+    cursor: pointer;  
+    font-size: 1.1em;  
+    font-weight: bold;  
+    margin-top: auto; /* 关键：将按钮推到底部 */  
+    transition: all 0.3s ease;  
+    letter-spacing: 1px;  
+}  
+
+button:hover {  
+    background: linear-gradient(45deg, #3949ab 0%, #5462b8 100%);  
+    transform: translateY(-3px);  
+    box-shadow: 0 7px 15px rgba(63, 81, 181, 0.3);  
+}  
+
+button:active {  
+    transform: translateY(-1px);  
+    box-shadow: 0 4px 10px rgba(63, 81, 181, 0.3);  
+}  
+
+/* --- 页脚 --- */  
+footer {  
+    margin-top: 30px;  
+    font-size: 0.9em;  
+    color: #888;  
+}  
+
+/* --- 响应式设计：小屏幕设备 --- */  
+@media (max-width: 768px) {  
+    .main-content {  
+        flex-direction: column; /* 垂直堆叠 */  
+        align-items: center;  
+    }  
+    
+    .inline-inputs {  
+        flex-direction: column; /* 在小屏幕上，经纬度也垂直堆叠 */  
+        gap: 20px;  
+    }  
+
+    .vertical-divider {  
+        width: 80%;  
+        height: 2px;  
+        margin: 20px 0;  
+    }  
+
+    .container {  
+        padding: 20px 25px;  
+        max-width: 500px;  
+    }  
+    
+    button {  
+        margin-top: 15px; /* 在移动端调整按钮上边距 */  
+    }  
+    
+    .input-mode {  
+        width: 100%;  
+    }  
+}
