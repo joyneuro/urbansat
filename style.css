@@ -1,0 +1,80 @@
+body {  
+    font-family: Arial, sans-serif;  
+    background-color: #f4f4f9;  
+    color: #333;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    height: 100vh;  
+    margin: 0;  
+}  
+
+.container {  
+    background-color: #fff;  
+    padding: 20px 40px;  
+    border-radius: 10px;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+    text-align: center;  
+    max-width: 500px;  
+    width: 90%;  
+}  
+
+header {  
+    margin-bottom: 20px;  
+}  
+
+.logo {  
+    max-width: 150px;  
+    margin-bottom: 10px;  
+}  
+
+h1 {  
+    color: #0056b3;  
+    font-size: 1.8em;  
+}  
+
+.input-group, .result-group {  
+    margin-bottom: 15px;  
+    text-align: left;  
+}  
+
+label {  
+    display: block;  
+    margin-bottom: 5px;  
+    font-weight: bold;  
+}  
+
+input[type="text"] {  
+    width: 100%;  
+    padding: 10px;  
+    border: 1px solid #ccc;  
+    border-radius: 5px;  
+    box-sizing: border-box; /* 保证padding不会影响宽度 */  
+}  
+
+input[readonly] {  
+    background-color: #e9ecef;  
+    cursor: not-allowed;  
+}  
+
+button {  
+    width: 100%;  
+    padding: 12px;  
+    background-color: #007bff;  
+    color: white;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+    font-size: 1em;  
+    margin-top: 10px;  
+}  
+
+button:hover {  
+    background-color: #0056b3;  
+}  
+
+footer {  
+    margin-top: 30px;  
+    font-size: 0.8em;  
+    color: #777;  
+}
