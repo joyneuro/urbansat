@@ -23,7 +23,7 @@ body {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);  
     text-align: center;  
     width: 100%;  
-    max-width: 950px; /* 增加了最大宽度 */  
+    max-width: 1050px; /* 增加了最大宽度以适应更宽的布局 */  
     backdrop-filter: blur(10px);  
     border: 1px solid rgba(255, 255, 255, 0.3);  
 }  
@@ -51,16 +51,16 @@ h1 {
 .main-content {  
     display: flex;  
     justify-content: space-around;  
-    align-items: stretch; /* 关键：让子项高度相等 */  
+    align-items: stretch;  
     gap: 30px;  
 }  
 
 /* --- 输入模式区域 --- */  
 .input-mode {  
     flex: 1;  
-    min-width: 300px;  
+    min-width: 320px;  
     display: flex;  
-    flex-direction: column; /* 确保内部元素垂直排列 */  
+    flex-direction: column;  
     padding: 0 10px;  
 }  
 
@@ -83,12 +83,12 @@ h1 {
 /* --- 并排的输入框 --- */  
 .inline-inputs {  
     display: flex;  
-    gap: 15px; /* 并排输入框之间的间距 */  
+    gap: 15px;  
     margin-bottom: 20px;  
 }  
 
 .inline-inputs .input-group {  
-    flex: 1; /* 让两个输入框平分空间 */  
+    flex: 1; /* 让三个输入框平分空间 */  
     margin-bottom: 0;  
 }  
 
@@ -99,7 +99,7 @@ h1 {
 }  
 
 .full-height-group {  
-    flex-grow: 1; /* 让此元素填充剩余空间 */  
+    flex-grow: 1;  
     display: flex;  
     flex-direction: column;  
 }  
@@ -139,33 +139,55 @@ input[readonly] {
     color: #3f51b5;  
 }  
 
-/* --- 文件上传按钮样式 --- */  
-input[type="file"] {  
-    width: 100%;  
-    padding: 10px;  
-    border: 2px dashed #ddd;  
-    border-radius: 8px;  
-    background-color: #f9f9f9;  
-    cursor: pointer;  
-    transition: border-color 0.3s, background-color 0.3s;  
-    font-size: 0.9em;  
-    flex-grow: 1;  
+/* --- 新的文件上传按钮样式 --- */  
+.file-upload-wrapper {  
+    position: relative;  
     display: flex;  
     align-items: center;  
-    justify-content: center;  
-    text-align: center;  
+    border: 2px dashed #ddd;  
+    border-radius: 8px;  
+    padding: 5px;  
+    transition: border-color 0.3s;  
+    background-color: #f9f9f9;  
+    flex-grow: 1; /* 让它填满剩余空间 */  
 }  
 
-input[type="file"]:hover {  
+.file-upload-wrapper:hover {  
     border-color: #3f51b5;  
-    background-color: #f0f2f5;  
+}  
+
+.file-upload-button {  
+    background-color: #7986cb;  
+    color: white;  
+    padding: 8px 15px;  
+    border-radius: 6px;  
+    cursor: pointer;  
+    font-weight: bold;  
+    white-space: nowrap;  
+    transition: background-color 0.3s;  
+}  
+
+.file-upload-button:hover {  
+    background-color: #3f51b5;  
 }  
 
 .file-info-text {  
-    margin-top: 15px;  
+    padding-left: 15px;  
     color: #555;  
     font-size: 0.9em;  
-    word-break: break-all;  
+    white-space: nowrap;  
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+}  
+
+input[type="file"] {  
+    position: absolute;  
+    left: 0;  
+    top: 0;  
+    width: 100%;  
+    height: 100%;  
+    opacity: 0; /* 隐藏原始输入框 */  
+    cursor: pointer;  
 }  
 
 /* --- 按钮样式 --- */  
@@ -179,20 +201,15 @@ button {
     cursor: pointer;  
     font-size: 1.1em;  
     font-weight: bold;  
-    margin-top: auto; /* 关键：将按钮推到底部 */  
+    margin-top: auto;  
     transition: all 0.3s ease;  
-    letter-spacing: 1px;  
+    letter-spacing: 0.5px;  
 }  
 
 button:hover {  
     background: linear-gradient(45deg, #3949ab 0%, #5462b8 100%);  
     transform: translateY(-3px);  
     box-shadow: 0 7px 15px rgba(63, 81, 181, 0.3);  
-}  
-
-button:active {  
-    transform: translateY(-1px);  
-    box-shadow: 0 4px 10px rgba(63, 81, 181, 0.3);  
 }  
 
 /* --- 页脚 --- */  
@@ -203,15 +220,16 @@ footer {
 }  
 
 /* --- 响应式设计：小屏幕设备 --- */  
-@media (max-width: 768px) {  
+@media (max-width: 880px) {  
     .main-content {  
-        flex-direction: column; /* 垂直堆叠 */  
+        flex-direction: column;  
         align-items: center;  
     }  
     
     .inline-inputs {  
-        flex-direction: column; /* 在小屏幕上，经纬度也垂直堆叠 */  
-        gap: 20px;  
+        flex-direction: column;  
+        gap: 15px;  
+        margin-bottom: 15px;  
     }  
 
     .vertical-divider {  
@@ -226,7 +244,7 @@ footer {
     }  
     
     button {  
-        margin-top: 15px; /* 在移动端调整按钮上边距 */  
+        margin-top: 15px;  
     }  
     
     .input-mode {  

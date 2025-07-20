@@ -12,23 +12,27 @@
     <div class="container">  
         <header>  
             <img src="logo.png" alt="Urbansat Logo" class="logo">  
-            <h1>Urbansat 指数查询</h1>  
+            <h1>Urbansat Query指数查询</h1>  
         </header>  
 
         <main class="main-content">  
             <!-- 模式一：手动输入 -->  
             <section class="input-mode">  
-                <h2>手动计算 （Manual input）</h2>  
+                <h2>手动计算 (Manual Input)</h2>  
                 
-                <!-- 新增的包裹容器 -->  
+                <!-- 更新：三个输入框放在一行 -->  
                 <div class="inline-inputs">  
                     <div class="input-group">  
                         <label for="longitude">经度 (Longitude)</label>  
-                        <input type="text" id="longitude" placeholder="例如: 116.4">  
+                        <input type="text" id="longitude" placeholder="116.4">  
                     </div>  
                     <div class="input-group">  
                         <label for="latitude">纬度 (Latitude)</label>  
-                        <input type="text" id="latitude" placeholder="例如: 39.9">  
+                        <input type="text" id="latitude" placeholder="39.9">  
+                    </div>  
+                    <div class="input-group">  
+                        <label for="year">年份 (Year)</label>  
+                        <input type="text" id="year" placeholder="2022">  
                     </div>  
                 </div>  
                 
@@ -36,20 +40,28 @@
                     <label for="urbansat-index">Urbansat 指数:</label>  
                     <input type="text" id="urbansat-index" readonly>  
                 </div>  
-                <button id="calculate-btn">计算指数（Calculate）</button>  
+                <!-- 更新按钮文本 -->  
+                <button id="calculate-btn">计算指数 (Calculate)</button>  
             </section>  
 
             <div class="vertical-divider"></div>  
 
             <!-- 模式二：文件导入 -->  
             <section class="input-mode">  
-                <h2>批量处理（Batch Calculation）</h2>  
+                <h2>批量处理文件 (Batch Input)</h2>  
                 <div class="input-group full-height-group">  
-                    <label for="file-upload">上传 XLSX 文件:</label>  
-                    <input type="file" id="file-upload" accept=".xlsx">  
-                    <p id="file-info" class="file-info-text"></p>  
+                    <!-- 更新标签文本 -->  
+                    <label for="file-upload">上传 XLSX 文件 (Upload XLSX file):</label>  
+                    <div class="file-upload-wrapper">  
+                         <!-- 注意：原生文件上传按钮的 "选择文件" 文字由浏览器和操作系统决定，无法通过HTML直接修改。  
+                              这里的 "选择文件 (Choose File)" 是通过CSS技巧模拟实现的。 -->  
+                        <span class="file-upload-button">选择文件 (Choose File)</span>  
+                        <span id="file-info" class="file-info-text">No file choosed </span>  
+                        <input type="file" id="file-upload" accept=".xlsx">  
+                    </div>  
                 </div>  
-                <button id="process-file-btn">生成结果文件（Calculate）</button>  
+                 <!-- 更新按钮文本 -->  
+                <button id="process-file-btn">生成结果文件 (Calculate)</button>  
             </section>  
         </main>  
 
